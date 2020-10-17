@@ -95,7 +95,7 @@ def load_tensorflow_to_memory(PATH_TO_IMAGE):
 
     # Path to frozen detection graph .pb file, which contains the model that is used
     # for object detection.
-    PATH_TO_CKPT = os.path.join(CWD_PATH,MODEL_NAME,'frozen_inference_graph (2).pb')
+    PATH_TO_CKPT = os.path.join(CWD_PATH,MODEL_NAME,'frozen_inference_graph.pb')
 
     # Path to label map file
     PATH_TO_LABELS = os.path.join(CWD_PATH,'training','label_map (2).pbtxt')
