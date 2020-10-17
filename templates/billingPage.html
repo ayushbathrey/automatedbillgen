@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Billing Page</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/billingPage.css') }}">
+</head>
+<body>
+	<br><br><br>
+	{% extends "mainLayout.html" %}
+	{% block content %}
+	<div id="loading" style="display:none; width: 100%; margin: 0px 70px 550px 500px;"><img height="300" width="300" src="static/css/images/giphy.gif" alt="Please wait" />
+	<h3 class="text-light">Your bill is processing!</h3>
+	</div>
+	<article id="unload">
+		<form method="post" enctype="multipart/form-data" id="uProductImg">
+			<input type="text" name="customer_name" placeholder="Customer's Name here" value="">&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="contact_no" placeholder="Customer's contactno here" value="">&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="customer_email" placeholder="Customer's email here" value="">&nbsp;&nbsp;&nbsp;&nbsp;
+			<button type="submit" class='btn btn-lg btn-danger' onclick="$('#loading').show(); $('#unload').hide();" >Generate Bill</button>
+			<br><br><br>
+		    <label for="files">Select product images: </label>
+		    <input id="files" class="btn btn-danger" type="file" multiple="multiple" accept="jpg*;capture=camera" name="file[]"/>
+		    <button type="button" class="btn btn-danger" id="clear">Clear selection</button>
+		</form>
+	    <hr>
+
+        <output id="result" />
+    </article>
+
+	{% endblock %}
+</body>
+</html>

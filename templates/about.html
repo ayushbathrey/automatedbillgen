@@ -1,0 +1,35 @@
+{% extends 'mainLayout.html'%}
+
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/stars.css') }}">
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+
+
+{% block title%} About {% endblock%}
+
+
+{% block content%}
+<br><br>
+<div class="jumbotron-light">
+	<div class="container">
+		{% if session ['name']%}
+		<h1 class="text-light">Hello,{{session ['name']}} !</h1>		
+		{% endif%}
+		<h2 class="text-light">About us</h1>		
+		<p class="text-light">
+			Iota system is an automated billing support system which uses Deep-learning model to generate invoice in fractions of seconds. Invoice generation can be really time consuming and standing in long lines is so much irritating, and causes frustration to customers, Here Iota systems comes into action by generating invoice in 7 or even less.
+		</p>
+		<p class="text-light">
+			<h3 class="text-light">Meet the team:</h3>
+			<ul>
+				<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="ayushbathrey">
+				<li class="text-light">Backend developer & Machine Learning analyst:<a class="LI-simple-link" href='https://in.linkedin.com/in/ayushbathrey?trk=profile-badge'>Ayush Bathrey</a></div><br>
+				<li class="text-light">Front developer : Ayush Hardikar</li>
+				<li class="text-light">Database Manager: Bharat Kabra</li>
+			</ul>
+		</p>	
+	</div>
+	</div>
+
+{% endblock%}

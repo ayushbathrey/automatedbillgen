@@ -1,0 +1,44 @@
+item {
+    id: 1
+    name: 'dell-monitor-D1918H'
+}
+
+item {
+    id: 2
+    name: 'dell-mouse-ms116'
+}
+
+item {
+    id: 3
+    name: 'hp-monitor-19ka'
+}
+
+item {
+    id: 4
+    name: 'hp-mouse-X1000'
+}
+
+item {
+    id: 5
+    name: 'logitech-keyboard-k400'
+}
+
+item {
+    id: 6
+    name: 'logitech-mouse-m185'
+}
+
+item {
+    id: 7
+    name: 'samsung-hdd-240gb'
+}
+
+item {
+    id: 8
+    name: 'samsung-monitor-b2030'
+}
+
+item {
+    id: 9
+    name: 'seagate-hdd-240gb'
+}

@@ -1,0 +1,42 @@
+{% extends 'mainLayout.html'%}
+
+{% block title%} Home {% endblock%}
+
+
+{% block content%}
+<br><br>
+<div class="jumbotron jumbotron-dark">
+	<div class="container">
+		{% if session ['name']%}
+		<h2 class="text-light">Hello,{{session ['name']}}!</h2>
+		{% endif%}
+		<p class="text-primary">
+			<h4 class="text-light"> Ever got annoyed waiting in long queues, Studies show people get irritated and frustrated standing in long waiting queues. 
+			Our system can reduce this time, and can generate an invoice in less than 7 seconds.</h4>
+			<a href="/about" class="btn btn-primary btn-lg">Learn more</a>
+		</p>
+	</div>
+</div>
+<br>
+<div class="container">
+			<h1 style="text-decoration: underline;" class="text-light" align="center">OUR PRODUCTS</h1>
+			<div style="margin-left: 150px" class="row">
+			{% for i in products %}
+						<!-- <h3>{{i[ 'product_image']}}</h3> -->
+						<div style="border-radius: 30px" class="col-md-3">
+						<div class='panel panel-primary'>
+						<div style="border-radius: 30px" class='panel panel-heading text-light'><strong>
+							{{i['product_title']}}
+						</strong></div>
+						<div style="border-radius: 30px" class="panel-body">
+							<img style="border-radius: 30px" class="prod-img img-toggle" src="/static/products/{{i['product_image']}}">
+						</div>
+							<div style="border-radius: 30px" class='panel-heading text-light'>Rs. {{i['product_price']}}
+							<a class="btn btn-outline-light" href="/">click</a>
+							</div>
+						</div>
+						</div>
+			{% endfor %}
+						</div>
+					</div>
+{% endblock%}

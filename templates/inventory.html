@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory</title>
+</head>
+<body><br><br>
+    {% extends "mainLayout.html" %}
+    {% block content %}
+    <!-- Content Header (Page header) -->
+  <div class="container-fluid"> 
+  <div class="row">
+    <div class="col-md-6">
+    <table class="table-bordered table-hover invoice">
+
+    	<thead>
+    		<tr>
+    			<th>product_id</th>
+    			<th>product_name</th>
+    			<th>product_cat</th>
+    			<th>product_title</th>
+    			<th>product_price</th>
+    			<th>stock</th>
+    			
+    		</tr>
+    	</thead>
+    	<tbody>
+    	{%for product in range(products|length)%}
+    			
+    		<tr>
+    			<td>{{products[product][0]}}</td>
+    			<td>{{products[product][1]}}</td>
+    			<td>{{products[product][2]}}</td>
+    			<td><a href="/inventory">{{products[product][3]}}</a></td>
+    			<td>{{products[product][4]}}</td>
+    			<td>{{products[product][5]}}</td>
+    		</tr>
+    	{%endfor%}
+    	</tbody>
+    </table>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="col-sm-5 invoice">
+    <form class="form-group" action="" method="POST" role="form">
+        <legend>Form title</legend>
+   
+        <div class="form-group">
+            <label class="label-primary" for="cars">Choose a product Id:</label>
+            <select class="text-primary" name="product_id" id="product_id">
+                {%for product in range(products|length)%}
+                    <option value="{{products[product][0]}}">{{products[product][0]}}</option>
+                {%endfor%}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="label-primary" for="cars">Choose a product category:</label>
+            <select class="text-primary" name="product_cat" id="product_id">
+                {%for product in range(products|length)%}
+                    <option value="{{products[product][1]}}">{{products[product][1]}}</option>
+                {%endfor%}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="label-primary" for="cars">Choose a product brand:</label>
+            <select class="text-primary" name="product_brand" id="product_id">
+                {%for product in range(products|length)%}
+                    <option value="{{products[product][2]}}">{{products[product][2]}}</option>
+                {%endfor%}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="label-primary" for="cars">Choose a product title:</label>
+            <select class="text-primary" name="product_title" id="product_id">
+                {%for product in range(products|length)%}
+                    <option value="{{products[product][3]}}">{{products[product][3]}}</option>
+                {%endfor%}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="label-primary" for="cars">Choose product price:</label>
+            <input type="number" name="product_price">
+        </div>
+
+        <div class="form-group">
+            <label class="label-primary" for="cars">Stock:</label>
+            <input type="number" name="product_stock">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+</div>
+</div>
+    
+    {% endblock %}
+
+
+</body>
+</html>
