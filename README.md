@@ -1,7 +1,11 @@
 # Automated Invoice generation using Machine Learning
 
-## How to setup the project:
+## Installation:
+~~~
 pip install -r requirements.txt
+~~~
 
-## How to start the project:
+## Start tool:
+~~~
 python app.py or flask run
+~~~
